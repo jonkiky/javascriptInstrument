@@ -1,0 +1,363 @@
+{
+    "type": "Program",
+    "body": [
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "myAccount"
+                    },
+                    "init": {
+                        "type": "Literal",
+                        "value": "ABC",
+                        "raw": "\"ABC\""
+                    }
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "myBalance"
+                    },
+                    "init": {
+                        "type": "Literal",
+                        "value": "123",
+                        "raw": "\"123\""
+                    }
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "testUnInitVar"
+                    },
+                    "init": null
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "testUnInitVar2"
+                    },
+                    "init": {
+                        "type": "ArrayExpression",
+                        "elements": []
+                    }
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "FunctionDeclaration",
+            "id": {
+                "type": "Identifier",
+                "name": "lookUpBalance"
+            },
+            "params": [
+                {
+                    "type": "Identifier",
+                    "name": "account"
+                }
+            ],
+            "body": {
+                "type": "BlockStatement",
+                "body": [
+                    {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                    "type": "Identifier",
+                                    "name": "console"
+                                },
+                                "property": {
+                                    "type": "Identifier",
+                                    "name": "log"
+                                }
+                            },
+                            "arguments": [
+                                {
+                                    "type": "BinaryExpression",
+                                    "operator": "+",
+                                    "left": {
+                                        "type": "Literal",
+                                        "value": "Output",
+                                        "raw": "\"Output\""
+                                    },
+                                    "right": {
+                                        "type": "Identifier",
+                                        "name": "account"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "VariableDeclaration",
+                        "declarations": [
+                            {
+                                "type": "VariableDeclarator",
+                                "id": {
+                                    "type": "Identifier",
+                                    "name": "balance"
+                                },
+                                "init": {
+                                    "type": "Literal",
+                                    "value": 123,
+                                    "raw": "123"
+                                }
+                            }
+                        ],
+                        "kind": "var"
+                    },
+                    {
+                        "type": "IfStatement",
+                        "test": {
+                            "type": "BinaryExpression",
+                            "operator": "==",
+                            "left": {
+                                "type": "Identifier",
+                                "name": "account"
+                            },
+                            "right": {
+                                "type": "Identifier",
+                                "name": "myAccount"
+                            }
+                        },
+                        "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "argument": {
+                                        "type": "Identifier",
+                                        "name": "myBalance"
+                                    }
+                                }
+                            ]
+                        },
+                        "alternate": {
+                            "type": "BlockStatement",
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "argument": {
+                                        "type": "UnaryExpression",
+                                        "operator": "-",
+                                        "argument": {
+                                            "type": "Literal",
+                                            "value": 1,
+                                            "raw": "1"
+                                        },
+                                        "prefix": true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "generator": false,
+            "expression": false,
+            "async": false
+        },
+        {
+            "type": "FunctionDeclaration",
+            "id": {
+                "type": "Identifier",
+                "name": "test"
+            },
+            "params": [
+                {
+                    "type": "Identifier",
+                    "name": "account"
+                },
+                {
+                    "type": "Identifier",
+                    "name": "aount2"
+                }
+            ],
+            "body": {
+                "type": "BlockStatement",
+                "body": [
+                    {
+                        "type": "ReturnStatement",
+                        "argument": {
+                            "type": "Literal",
+                            "value": "test",
+                            "raw": "\"test\""
+                        }
+                    }
+                ]
+            },
+            "generator": false,
+            "expression": false,
+            "async": false
+        },
+        {
+            "type": "FunctionDeclaration",
+            "id": {
+                "type": "Identifier",
+                "name": "test2"
+            },
+            "params": [],
+            "body": {
+                "type": "BlockStatement",
+                "body": [
+                    {
+                        "type": "ReturnStatement",
+                        "argument": {
+                            "type": "Literal",
+                            "value": "123",
+                            "raw": "\"123\""
+                        }
+                    }
+                ]
+            },
+            "generator": false,
+            "expression": false,
+            "async": false
+        },
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "flag"
+                    },
+                    "init": {
+                        "type": "Literal",
+                        "value": true,
+                        "raw": "true"
+                    }
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "FunctionDeclaration",
+            "id": {
+                "type": "Identifier",
+                "name": "test3"
+            },
+            "params": [],
+            "body": {
+                "type": "BlockStatement",
+                "body": [
+                    {
+                        "type": "IfStatement",
+                        "test": {
+                            "type": "Identifier",
+                            "name": "flag"
+                        },
+                        "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                                {
+                                    "type": "ExpressionStatement",
+                                    "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                            "type": "Identifier",
+                                            "name": "test2"
+                                        },
+                                        "arguments": []
+                                    }
+                                }
+                            ]
+                        },
+                        "alternate": {
+                            "type": "BlockStatement",
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "argument": {
+                                        "type": "Literal",
+                                        "value": "123",
+                                        "raw": "\"123\""
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "generator": false,
+            "expression": false,
+            "async": false
+        },
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "globalVar"
+                    },
+                    "init": {
+                        "type": "Literal",
+                        "value": "123",
+                        "raw": "\"123\""
+                    }
+                }
+            ],
+            "kind": "var"
+        }
+    ],
+    "sourceType": "script"
+}
+var myAccount = 'ABC';
+var myBalance = '123';
+var testUnInitVar;
+var testUnInitVar2 = [];
+function lookUpBalance(account) {
+    console.log('Output' + account);
+    var balance = 123;
+    if (account == myAccount) {
+        return myBalance;
+    } else {
+        return -1;
+    }
+}
+function test(account, aount2) {
+    return 'test';
+}
+function test2() {
+    return '123';
+}
+var flag = true;
+function test3() {
+    if (flag) {
+        test2();
+    } else {
+        return '123';
+    }
+}
+var globalVar = '123';

@@ -1,0 +1,117 @@
+{
+    "type": "Program",
+    "body": [
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "myAccount"
+                    },
+                    "init": {
+                        "type": "Literal",
+                        "value": "ABC",
+                        "raw": "\"ABC\""
+                    }
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "myBalance"
+                    },
+                    "init": {
+                        "type": "Literal",
+                        "value": "123",
+                        "raw": "\"123\""
+                    }
+                }
+            ],
+            "kind": "var"
+        },
+        {
+            "type": "FunctionDeclaration",
+            "id": {
+                "type": "Identifier",
+                "name": "lookUpBalance"
+            },
+            "params": [
+                {
+                    "type": "Identifier",
+                    "name": "account"
+                }
+            ],
+            "body": {
+                "type": "BlockStatement",
+                "body": [
+                    {
+                        "type": "IfStatement",
+                        "test": {
+                            "type": "BinaryExpression",
+                            "operator": "==",
+                            "left": {
+                                "type": "Identifier",
+                                "name": "account"
+                            },
+                            "right": {
+                                "type": "Identifier",
+                                "name": "myAccount"
+                            }
+                        },
+                        "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "argument": {
+                                        "type": "Identifier",
+                                        "name": "myBalance"
+                                    }
+                                }
+                            ]
+                        },
+                        "alternate": {
+                            "type": "BlockStatement",
+                            "body": [
+                                {
+                                    "type": "ReturnStatement",
+                                    "argument": {
+                                        "type": "UnaryExpression",
+                                        "operator": "-",
+                                        "argument": {
+                                            "type": "Literal",
+                                            "value": 1,
+                                            "raw": "1"
+                                        },
+                                        "prefix": true
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "generator": false,
+            "expression": false,
+            "async": false
+        }
+    ],
+    "sourceType": "script"
+}
+var myAccount = 'ABC';
+var myBalance = '123';
+function lookUpBalance(account) {
+    if (account == myAccount) {
+        return myBalance;
+    } else {
+        return -1;
+    }
+}
