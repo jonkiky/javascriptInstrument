@@ -60,6 +60,7 @@ function instrument(ACT,parent){
 		console.log("================================")
 		console.log("function")
 		console.log(ACT.body.body)
+		// find all parms
 		if(ACT.params.length>0){
 			console.log(ACT.params);
 			for(var e in ACT.params){
@@ -74,7 +75,31 @@ function instrument(ACT,parent){
 			ACT.body.body.unshift(globalVarMonitor);
 
 		}
+
+		for(let i in ACT.boy.body){
+			instrument(ACT.boy.body[i],ACT.boy.body)
+		}
 	}
+	if(ACT.type=="ExpressionStatement"){
+		// call function
+		if(ACT.expression.type == "CallExpression" && ACT.expression){
+			// get function name
+			ACT.expression.callee.name;
+		}
+
+	}
+
+	if(ACT.type=="IfStatement"){
+		// branch
+
+		
+	}
+
+	if(ACT.type=="VariableDeclaration"){
+		// local var
+		
+	}
+
 
 }
 
